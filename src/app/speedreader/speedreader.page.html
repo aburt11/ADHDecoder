@@ -1,0 +1,131 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+    <ion-title>speed reader</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  
+
+    <ion-card  class="animated fadeIn">
+        <ion-card-header>
+          <ion-card-subtitle class="animated fadeIn">optimize your text, learn faster</ion-card-subtitle>
+          <ion-card-title  class="animated fadeIn">SpeedReader (Beta)</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+
+
+          <h2 class="ion-text-center readerText">
+          {{currentWord}}
+
+          </h2>
+
+                          
+        </ion-card-content>
+
+        </ion-card>
+
+        <!--
+        <ion-row>
+
+            <div class="wordStart">
+                <h2>
+                    {{wordStart}}
+        
+                  </h2>
+
+            </div>
+
+          <div class="wordMiddle">
+          <h2>
+            {{wordMid}}
+
+          </h2>
+
+        </div>
+
+        <div class="wordEnd">
+            <h2>
+                {{wordEnd}}
+    
+              </h2>
+
+        </div>
+
+        </ion-row>
+
+       -->
+
+
+        <ion-button *ngIf="isReading === false"  class="animated fadeIn" full color="dark"  class="ion-center startReader"   size="large"  (click)='onStartReader()' >
+          <ion-icon slot="arrow-round-forward"  name="star"></ion-icon>
+          Start
+        </ion-button>
+
+        <ion-button *ngIf="isReading === true"  class="animated fadeIn" full color="dark"  class="ion-center startReader"   size="large"  (click)='onStopReader()' >
+          <ion-icon slot="arrow-round-forward"  name="star"></ion-icon>
+         Stop
+        </ion-button>
+
+
+
+  <ion-card  class="animated fadeIn">
+    <ion-card-header>
+      <ion-card-subtitle  class="animated fadeIn">paste your text down below, then choose a reading pace</ion-card-subtitle>
+      <ion-card-title  class="animated fadeIn">Your Source Text</ion-card-title>
+
+
+     <!-- <ion-row padding>
+        <ion-col>
+
+   
+      <ion-button   class="animated fadeIn"  color="primary"  class="ion-center startReader"   size="large"  (click)='onOpenFIle()' >
+        <ion-icon slot="arrow-round-forward"  name="star"></ion-icon>
+        Open File
+      </ion-button>
+    </ion-col>
+  </ion-row>-->
+
+    </ion-card-header>
+  
+    <ion-card-content>
+    
+
+              
+   <!--          
+<ion-item>
+  <ion-button full color="dark" extend="block" class="ion-center startReader"   size="large"  (click)='onOpenFIle()' >
+    <ion-icon slot="arrow-round-forward"  name="star"></ion-icon>
+    Open File
+  </ion-button>
+</ion-item>
+            -->   
+
+
+
+              <ion-item  class="animated fadeIn">
+                  <!-- Textarea in an item with a placeholder -->
+                <ion-textarea  class="animated fadeIn" id="input-text" rows="6" [(ngModel)]="sourceText" placeholder="Enter your source texts here..."></ion-textarea>
+
+          </ion-item>
+
+          
+                <!-- Words Per Minute Input  -->
+                <ion-item  class="animated fadeIn">
+                  <ion-label  class="animated fadeIn">
+                      Words Per Minute
+                    </ion-label>
+                <!-- Input with placeholder -->
+                  <ion-input  class="animated fadeIn" [(ngModel)]="wpm" placeholder="e.g. 200WPM"></ion-input>
+            </ion-item>
+
+
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

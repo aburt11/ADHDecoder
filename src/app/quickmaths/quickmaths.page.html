@@ -1,0 +1,168 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+    <ion-title>Quick Maths</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+
+  <ion-card text-center *ngIf="isPlaying === false" class="animated fadeIn" >
+    <ion-card-header>
+    <h1>Multiplication (Beta) </h1> 
+    </ion-card-header>
+    <ion-card-content>
+
+      
+      <h2 padding  class="animated fadeIn"> Improve your Cognition with simple arithmetic. Your progress can be tracked on the Progress Tracker Page. </h2>
+
+
+      <ion-row class="ion-margin ion-padding">
+        <ion-col>
+          <ion-item  class="ion-margin ion-padding">
+            <ion-label position="stacked">Select Difficulty</ion-label>
+            <ion-select placeholder="Level..." [(ngModel)]="selectedLevel">
+              <ion-select-option *ngFor="let item of gameLevels" value="{{item}}">Level {{item}}</ion-select-option>
+       
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+
+        <ion-button  class="animated fadeIn" fill="outline" shape="round" expand="block" color="primary"  class="ion-center startReader"   size="large"  (click)='startMultiplication()' >
+            <ion-icon slot="arrow-round-forward"  name="star"></ion-icon>
+            Start
+          </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card  class="animated fadeIn"  text-center *ngIf="isPlaying === true && gameFinished === false" >
+
+    <ion-row style="padding: 0px;"  text-center>
+      <ion-col>
+      <h1> Time: {{playerTimeInSeconds}}</h1> 
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="isTock === false"    text-center>
+        <ion-col>
+        <h1 class="animated pulse"> {{currentRound}} / {{rounds}}</h1> 
+        </ion-col>
+      </ion-row>
+
+      <ion-row  *ngIf="isTock === true"      text-center>
+          <ion-col>
+          <h1 class="animated pulse"> {{currentRound}} / {{rounds}}</h1> 
+          </ion-col>
+        </ion-row>
+
+
+ 
+     
+
+    </ion-card>
+
+    <ion-row   class="animated fadeIn" text-center padding *ngIf="isPlaying === true && gameFinished === false">
+    
+    <h1 class="equation animated fadeIn faster">   {{currentEquationString}}  <!-- Number type input -->  </h1>   <ion-input type="number" autofocus="true" class="numberInput animated fadeIn faster" [(ngModel)]="userInput"> </ion-input> 
+
+  
+  </ion-row>
+
+
+
+    
+  <ion-card  class="animated fadeIn" text-center *ngIf="isPlaying === true && gameFinished === true" >
+
+      <ion-row padding text-center >
+        <ion-col>
+            <h2 class=" animated fadeIn faster">    Time Taken: {{playerTimeInSeconds}} Seconds </h2>
+        </ion-col>
+      </ion-row>
+  
+  
+      <ion-row padding text-center > 
+        <ion-col>
+        
+            <h2 class=" animated fadeIn faster">       Rating: {{playerRating}} </h2>
+
+
+        </ion-col>
+      </ion-row>
+
+      <ion-row  class="animated fadeIn" padding>
+        <ion-col>
+            <ion-button expand="block" fill="outline" shape="round" class="animated fadeIn"  color="primary"  class="ion-center startReader"   size="large" (click)="goHome()"  > Home </ion-button>
+        </ion-col>
+      </ion-row>
+
+      <ion-row   class="animated fadeIn" padding>
+          <ion-col>
+              <ion-button  expand="block"  fill="outline" shape="round" class="animated fadeIn"  color="primary"  class="ion-center startReader"   size="large" (click)="playAgain()"  > Play Again </ion-button>
+          </ion-col>
+        </ion-row>
+  
+      </ion-card>
+
+
+      <!--
+      <ion-card text-center *ngIf="isPlaying === true && gameFinished === false" >
+<ion-row>
+  <ion-col>
+      <ion-button  fill="outline" shape="round" class="animated fadeIn numberBtn"  color="primary"  class="ion-center startReader"   size="large" (click)="buttonPressed('1')"  > 1 </ion-button>
+  </ion-col>
+      <ion-col>
+      <ion-button  fill="outline" shape="round" class="animated fadeIn numberBtn"  color="primary"  class="ion-center startReader"   size="large" (click)="buttonPressed('2')"  > 2 </ion-button>
+        </ion-col>
+      <ion-col>
+      <ion-button  fill="outline" shape="round" class="animated fadeIn numberBtn"  color="primary"  class="ion-center startReader"   size="large" (click)="buttonPressed('3')" > 3 </ion-button>
+
+  </ion-col>
+</ion-row>
+
+<ion-row>
+  <ion-col>
+      <ion-button  fill="outline" shape="round" class="animated fadeIn numberBtn"  color="primary"  class="ion-center startReader"   size="large" (click)="buttonPressed('4')"  > 4 </ion-button>
+    </ion-col>
+    <ion-col>
+      <ion-button  fill="outline" shape="round" class="animated fadeIn numberBtn"  color="primary"  class="ion-center startReader"   size="large" (click)="buttonPressed('5')" > 5 </ion-button>
+    </ion-col>
+    <ion-col>
+      <ion-button  fill="outline" shape="round" class="animated fadeIn numberBtn"  color="primary"  class="ion-center startReader"   size="large" (click)="buttonPressed('6')"  > 6 </ion-button>
+  </ion-col>
+</ion-row>
+        
+      <ion-row>
+        <ion-col>
+
+            <ion-button  fill="outline" shape="round" class="animated fadeIn numberBtn"  color="primary"  class="ion-center startReader"   size="large" (click)="buttonPressed('7')"  > 7 </ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button  fill="outline" shape="round" class="animated fadeIn numberBtn"  color="primary"  class="ion-center startReader"   size="large" (click)="buttonPressed('8')"  > 8 </ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button  fill="outline" shape="round" class="animated fadeIn numberBtn"  color="primary"  class="ion-center startReader"   size="large" (click)="buttonPressed('9')"  > 9 </ion-button>
+          
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+          <ion-col>
+  
+            
+          <ion-button  fill="outline" shape="round" class="animated fadeIn numberBtn"  color="primary"  class="ion-center startReader"   size="large" (click)="buttonPressed(0)" > 0 </ion-button>
+          </ion-col>
+        </ion-row>
+
+
+
+
+      </ion-card>-->
+
+   
+    
+
+</ion-content>

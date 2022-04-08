@@ -1,0 +1,52 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-admob-free": {
+      "PACKAGE_NAME": "com.adhd.decoder"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.adhd.decoder"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "com.adhd.decoder"
+    },
+    "cordova-plugin-filechooser": {
+      "PACKAGE_NAME": "com.adhd.decoder"
+    },
+    "cordova-plugin-filepath": {
+      "PACKAGE_NAME": "com.adhd.decoder"
+    },
+    "cordova-plugin-ionic-keyboard": {
+      "PACKAGE_NAME": "com.adhd.decoder"
+    },
+    "cordova-plugin-ionic-webview": {
+      "PACKAGE_NAME": "com.adhd.decoder"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.adhd.decoder"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.adhd.decoder"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.adhd.decoder"
+    },
+    "cordova-sqlite-storage": {
+      "PACKAGE_NAME": "com.adhd.decoder"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-admob-sdk": {
+      "PACKAGE_NAME": "com.adhd.decoder"
+    },
+    "cordova-promise-polyfill": {
+      "PACKAGE_NAME": "com.adhd.decoder"
+    }
+  }
+}

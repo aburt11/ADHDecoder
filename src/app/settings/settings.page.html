@@ -1,0 +1,132 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>Settings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <ion-card-header>
+
+        <ion-card-title>
+            Color Scheme
+          </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+    
+        <ion-list>
+            <ion-radio-group>
+              
+              <ion-row>
+                <ion-col size="6">
+
+                  <ion-list>
+                    <ion-label> Light Color Schemes:</ion-label>
+                    <ion-item>
+                      <ion-label>Light</ion-label>
+                      <ion-radio slot="start" (ionSelect)="changeTheme('autumn')" value="autumn" checked></ion-radio>
+                    </ion-item>
+      
+                    <ion-item>
+                      <ion-label>Lime</ion-label>
+                      <ion-radio slot="start" (ionSelect)="changeTheme('lime')" value="lime" checked></ion-radio>
+                    </ion-item>
+      
+                    <ion-item>
+                      <ion-label>Berry</ion-label>
+                      <ion-radio slot="start" (ionSelect)="changeTheme('strawberry')" value="strawberry" checked></ion-radio>
+                    </ion-item>
+      
+                    <ion-item>
+                      <ion-label>Square</ion-label>
+                      <ion-radio slot="start" (ionSelect)="changeTheme('square')" value="square" checked></ion-radio>
+                    </ion-item>
+      
+                    <ion-item>
+                      <ion-label>Calm</ion-label>
+                      <ion-radio slot="start" (ionSelect)="changeTheme('calm')" value="calm" checked></ion-radio>
+                    </ion-item>
+      
+                  </ion-list>
+                </ion-col>
+
+                <ion-col size="6">
+
+ 
+                  <ion-list>
+                    <ion-label> Dark Color Schemes:</ion-label>
+                     
+                  <ion-item>
+                    <ion-label>Calm Dark</ion-label>
+                    <ion-radio slot="start" (ionSelect)="changeTheme('calmdark')" value="calmdark" checked></ion-radio>
+                  </ion-item>
+    
+                  <ion-item>
+                    <ion-label>Pastel</ion-label>
+                    <ion-radio slot="start" (ionSelect)="changeTheme('pastel')" value="pastel"></ion-radio>
+                  </ion-item>
+              
+                  <ion-item>
+                    <ion-label>Dark</ion-label>
+                    <ion-radio slot="start" (ionSelect)="changeTheme('night')" value="night"></ion-radio>
+                  </ion-item>
+              
+                  <ion-item>
+                    <ion-label>Neon</ion-label>
+                    <ion-radio slot="start" (ionSelect)="changeTheme('neon')" value="neon"></ion-radio>
+                  </ion-item>
+    
+                  <ion-item>
+                    <ion-label>Cherry</ion-label>
+                    <ion-radio slot="start" (ionSelect)="changeTheme('cherry')" value="cherry"></ion-radio>
+                  </ion-item>
+    
+                  <ion-item>
+                    <ion-label>Royalty</ion-label>
+                    <ion-radio slot="start" (ionSelect)="changeTheme('royalty')" value="royalty"></ion-radio>
+                  </ion-item>
+                  </ion-list>
+          
+                  
+                </ion-col>
+              </ion-row>
+
+
+             
+            
+
+            </ion-radio-group>
+          </ion-list>
+
+  
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card padding>
+
+    <ion-card-title>
+
+      Progress Tracker
+
+    </ion-card-title>
+
+    <ion-card-content>
+
+      
+        <ion-item>
+            <ion-label>Reset Your Data?</ion-label>
+        
+            <ion-button style="width:100%;" shape="round" fill="outline" routerDirection="root" (click)="onClickResetProgress()"> Reset Progress Data </ion-button>
+          </ion-item>
+
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

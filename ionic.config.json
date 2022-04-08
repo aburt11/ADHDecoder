@@ -1,0 +1,7 @@
+{
+  "name": "neurotrophicX",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
